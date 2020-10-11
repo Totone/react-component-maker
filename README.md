@@ -73,6 +73,12 @@ You can change files names in their variables:
 - `containerFilename`
 - `styleFilename`
 
+You can change files content in lists set in functions:
+
+- `fillIndex`
+- `fillView`
+- `fillContainer`
+
 ## Conclusion
 
 At first it was just a script among others I used to enhance my developper's routines. I got the idea to write it in bash instead of node & share it. I tried to make it more universal to be useful by everybody.  
