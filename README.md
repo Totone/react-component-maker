@@ -14,9 +14,9 @@
 4. Tip: You can create a shortcut in `package.json` scripts, e.g `newComp: ./_dev/newReactComponent.sh` (assuming that the script is in a `_dev` folder) to use it easily
 5. Create a component with the command: `npm run newComp CompName`
 
-## WHAT IS THAT
+## Why this script ?
 
-This is just a script which creates everything needed when you want to create a new component in a React.js project.
+This script creates everything needed when you want to create a new component in a React.js project.
 
 ### React structure patterns
 
@@ -24,12 +24,18 @@ There is plenty of patterns to handle React components. In order to be the most 
 
 ```bash
  src
-  └── components
-          └── ComponentName
+  ├── components/
+  │       └── ComponentName/
+  │               ├── index.jsx
+  │               ├── ComponentName.scss
+  │               ├── ComponentName-view.jsx
+  │               └── ComponentName-container.jsx
+  └── views/
+          └ ViewComponent/
                   ├── index.jsx
-                  ├── ComponentName.scss
-                  ├── ComponentName-view.jsx
-                  └── ComponentName-container.jsx
+                  ├── ViewComponent.scss
+                  ├── ViewComponent-view.jsx
+                  └── ViewComponent-container.jsx
 ```
 
 - You can import component in other React components easily thanks to `index.jsx`
@@ -47,14 +53,15 @@ So each time you want to create a component you need:
 - Create an `ComponentName-container.jsx` file
 - Create an `ComponentName.scss` file
 
-And if you want to create another component you HAVE TO do this again, and again...
+And if you want to create another component you HAVE TO do this again, and again... AND OF COURSE you HAVE TO fill every file in this folder.
 
-This script allows you to create everything needed with a single command, seriously enhancing your coding times!
+This script allows you to create everything needed with a single command, with prefilled files, seriously enhancing your coding times!
 
 ### How to use it
 
 - Simple. Just call the script with the new component's name as an argument.  
 - If argument is not set, script asks you what name you want for your new component.  
+- Choose if the new element is a view component or a single component
 - If a component with the same name already exists, the script warns you & ends.
 - Else, it creates & fills files to get the component directly usable in your project.
 
@@ -66,7 +73,7 @@ Feel free to edit the script if you don't want to use my pattern. You just need 
 - `reactExt`: You can modify this variable if you want to use `.js` or if you use typeScript with `.ts` & `.tsx` extensions
 - `styleExt`: Mayyyybee you works with css... In this case, edit this variable...
 
-You can change files names in their variables:
+You can change files names in their variables at end of the script:
 
 - `indexFilename`
 - `viewFilename`
@@ -78,8 +85,9 @@ You can change files content in lists set in functions:
 - `fillIndex`
 - `fillView`
 - `fillContainer`
+- `fillStyle`
 
 ## Conclusion
 
-At first it was just a script among others I used to enhance my developper's routines. I got the idea to write it in bash instead of node & share it. I tried to make it more universal to be useful by everybody.  
-Feel free to give my any feedback you want, or support my work the ways you want !
+At first it was just a script among others I used to enhance my developper's routines. I got the idea to write & share it. I tried to make it more universal to be useful by anyone.  
+Feel free to give any feedback you want, or support my work the ways you want.
